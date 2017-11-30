@@ -8,5 +8,5 @@ This code is based on
 
 ## content
 
-- [multi-armed bandit]()
+- [multi-armed bandit](https://github.com/gaoxinge/reinforcement-learning/tree/master/multi-armed%20bandit)
 - [dynamic programming]()
