@@ -32,6 +32,3 @@ def all_demo():
     ss = [algorithm_demo(arms, algorithm, 1000) for algorithm in algorithms]
     [plt.plot(range(1000), ss[i], label=algorithms[i].name) for i in range(4)]
     plt.legend(), plt.grid(), plt.show()
-
-if __name__ == '__main__':
-    all_demo()
