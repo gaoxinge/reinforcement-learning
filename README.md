@@ -9,4 +9,4 @@ This code is based on
 ## content
 
 - [multi-armed bandit](https://github.com/gaoxinge/reinforcement-learning/tree/master/multi-armed%20bandit)
-- [dynamic programming]()
+- [grid world](https://github.com/gaoxinge/reinforcement-learning/tree/master/grid%20world)
