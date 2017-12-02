@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import time
 
 class State(object):
     """State is a class, which represents
@@ -42,7 +43,12 @@ class State(object):
     
     def __repr__(self):
         return 'State({x}, {y})'.format(x=self.x, y=self.y)
-    
+
+def _initialize(size):
+    return {
+        State(x, y): 0.0 for x in range(size) for y in range(size)        
+    }
+        
 class GridWorld(object):
     """Grid world is a game with
     four actions:
@@ -53,12 +59,20 @@ class GridWorld(object):
         3  <--->  down
     
     :param size: size * size grids
-    :param gamma: discounted value
     """
 
-    def __init__(self, size, gamma):
+    def __init__(self, size):
         self.size = size
-        self.gamma = gamma
+    
+    @property
+    def states(self):
+        return [
+            State(x,y) for x in range(self.size) for y in range(self.size)
+        ]
+        
+    @property
+    def actions(self):
+        return [0, 1, 2, 3]
     
     @property
     def state_transition_table(self):
@@ -66,16 +80,18 @@ class GridWorld(object):
         for x in range(self.size):
             for y in range(self.size):
                 for action in range(4):
+                    state_action = (State(x, y), action)
+                    table[state_action] = _initialize(self.size)
                     if x > 0 and action == 0:
-                        table[(State(x, y), action)] = (State(x-1, y), 1)
+                        table[state_action][State(x-1, y)] = 1.0
                     elif x < self.size-1 and action == 1:
-                        table[(State(x, y), action)] = (State(x+1, y), 1)
+                        table[state_action][State(x+1, y)] = 1.0
                     elif y > 0 and action == 2:
-                        table[(State(x, y), action)] = (State(x, y-1), 1)
+                        table[state_action][State(x, y-1)] = 1.0
                     elif y < self.size-1 and action == 3:
-                        table[(State(x, y), action)] = (State(x, y+1), 1)
+                        table[state_action][State(x, y+1)] = 1.0
                     else:
-                        table[(State(x, y), action)] = (State(x, y), 1)
+                        table[state_action][State(x, y)] = 1.0
         return table
 
     @property
@@ -84,7 +100,7 @@ class GridWorld(object):
         for x in range(self.size):
             for y in range(self.size):
                 for action in range(4):
-                    table[(State(x, y), action)] = -1
+                    table[(State(x, y), action)] = -1.0
         return table
         
     def reset(self):
@@ -109,9 +125,7 @@ class GridWorld(object):
         return self.state, -1, done
     
     def render(self):
-        import time
         time.sleep(0.01)
-        
         view = ''
         for y in range(self.size):
             for x in range(self.size):
@@ -123,7 +137,7 @@ class GridWorld(object):
         print view
         
 if __name__ == '__main__':
-    env = GridWorld(4, 1)
+    env = GridWorld(4)
     total_reward = 0
     env.reset()
     while True:
