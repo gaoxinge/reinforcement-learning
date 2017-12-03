@@ -23,7 +23,7 @@ class GridWorld(object):
     - two rewards:
         
         terminal states:    0
-        noterminal states: -1
+        nonterminal states: -1
     
     :param size: size * size grids
     :param gamma: discount factor

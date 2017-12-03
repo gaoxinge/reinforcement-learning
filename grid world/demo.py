@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from mdp import GridWorld
-from algorithm import DP
+from agent import DP
 
 size = 4
 gamma = 1
