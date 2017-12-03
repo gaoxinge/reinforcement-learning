@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from mdp import GridWorld
+from environment import GridWorld
 from agent import DP
 
 size = 4
