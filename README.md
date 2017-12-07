@@ -10,5 +10,5 @@ This code is based on
 
 - [multi-armed bandit](https://github.com/gaoxinge/reinforcement-learning/tree/master/multi-armed%20bandit)
 - [grid world](https://github.com/gaoxinge/reinforcement-learning/tree/master/grid%20world)
-- [model free]()
+- [model free](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20free)
 - [model based]()
