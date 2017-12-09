@@ -8,7 +8,7 @@ UNIT = 40
 MAZE_H = 4
 MAZE_W = 4
 
-class MazeEnvironment(tk.Tk):
+class Maze(tk.Tk):
 
     def __init__(self):
         tk.Tk.__init__(self)
@@ -69,7 +69,7 @@ class MazeEnvironment(tk.Tk):
             origin[0] + 15, origin[1] + 15,
             fill='red'
         )
-        return self.canvas.coords(self.rect)
+        return tuple(self.canvas.coords(self.rect))
 
     def step(self, action):
         s = self.canvas.coords(self.rect)
@@ -94,13 +94,14 @@ class MazeEnvironment(tk.Tk):
             reward = 100
             done = True
         elif s_ in [self.canvas.coords(self.hell1), self.canvas.coords(self.hell2)]:
-            reward = -1
+            reward = -2
             done = True
         else:
-            reward = 0
+            reward = -1
             done = False
 
-        return s, reward, done
+        return tuple(s), reward, done
 
     def render(self):
+        time.sleep(0.01)
         self.update()
