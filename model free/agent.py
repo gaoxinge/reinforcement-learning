@@ -45,7 +45,7 @@ class MonteCarloAgent(object):
             self.value_q[state][action] += (total_reward - self.value_q[state][action]) / self.value_n[state][action]
         self.episode = []
 
-class SaraAgent(object):
+class SarsaAgent(object):
 
     def __init__(self, act_n, gamma=0.9, epsilon=0.1):
         self.act_n = act_n
@@ -77,7 +77,7 @@ class SaraAgent(object):
         error = target - predict
         self.value_q[state][action] += error / self.value_n[state][action]
 
-class SaraLambdaAgent(object):
+class SarsaLambdaAgent(object):
 
     def __init__(self, act_n, gamma=0.9, epsilon=0.1, lambda_=0.9):
         self.act_n = act_n

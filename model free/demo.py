@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 from environment import Maze
-from agent import MonteCarloAgent, SaraAgent, SaraLambdaAgent, QLearnAgent
+from agent import MonteCarloAgent, SarsaAgent, SarsaLambdaAgent, QLearnAgent
 
 def monte_carlo_demo(env, agent, episodes):
     r, rs = 0, []
@@ -24,7 +24,7 @@ def monte_carlo_demo(env, agent, episodes):
                 break
     return rs
                 
-def sara_demo(env, agent, episodes):
+def sarsa_demo(env, agent, episodes):
     r, rs = 0, []
     for episode in range(episodes):
         total_reward = 0
@@ -71,16 +71,16 @@ def test_monte_carlo():
     rs = monte_carlo_demo(env, agent, 2000)
     plt.plot(range(2000), rs), plt.grid(), plt.show()
 
-def test_sara():
+def test_sarsa():
     env = Maze()
-    agent = SaraAgent(act_n=4)
-    rs = sara_demo(env, agent, 2000)
+    agent = SarsaAgent(act_n=4)
+    rs = sarsa_demo(env, agent, 2000)
     plt.plot(range(2000), rs), plt.grid(), plt.show()
     
-def test_sara_lambda():
+def test_sarsa_lambda():
     env = Maze()
-    agent = SaraLambdaAgent(act_n=4)
-    rs = sara_demo(env, agent, 2000)
+    agent = SarsaLambdaAgent(act_n=4)
+    rs = sarsa_demo(env, agent, 2000)
     plt.plot(range(2000), rs), plt.grid(), plt.show()
 
 def test_q_learn():

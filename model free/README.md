@@ -11,12 +11,12 @@
 ![6](https://github.com/gaoxinge/reinforcement-learning/blob/master/model%20free/image/6.png)
 ![2](https://github.com/gaoxinge/reinforcement-learning/blob/master/model%20free/image/2.png)
 
-### sara
+### sarsa
 
 ![7](https://github.com/gaoxinge/reinforcement-learning/blob/master/model%20free/image/7.png)
 ![3](https://github.com/gaoxinge/reinforcement-learning/blob/master/model%20free/image/3.png)
 
-### sara lambda
+### sarsa lambda
 
 ![8](https://github.com/gaoxinge/reinforcement-learning/blob/master/model%20free/image/8.png)
 ![4](https://github.com/gaoxinge/reinforcement-learning/blob/master/model%20free/image/4.png)
