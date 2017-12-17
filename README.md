@@ -4,14 +4,14 @@ This repository provides code for the tutorial of reinforcement learning.
 
 ## content
 
-- multi-armed bandit ([tutorial](https://zhuanlan.zhihu.com/p/31577741), [code]())
-- mdp ([tutorial](https://zhuanlan.zhihu.com/p/31613480), [code]())
-- bellman equation ([tutorial](https://zhuanlan.zhihu.com/p/31650439), [code]())
-- dynamic programming ([tutorial](https://zhuanlan.zhihu.com/p/31804601))
-- model free control ([tutorial](), [code]())
+- [multi-armed bandit](https://github.com/gaoxinge/reinforcement-learning/tree/master/multi-armed%20bandit)
+- [grid world](https://github.com/gaoxinge/reinforcement-learning/tree/master/grid%20world)
+- [model free](https://github.com/gaoxinge/reinforcement-learning)
+- [model based](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20based)
+- [mcts](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts)
 
 ## reference
 
-- UCL Course on RL ([video](https://www.bilibili.com/video/av8912293/), [slide](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html))
-- Reinforcement Learning: An Introduction ([book](http://incompleteideas.net/book/bookdraft2017nov5.pdf))
-- Algorithms for Reinforcement Learning ([book](https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf))
+- [UCL Course on RL](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html)
+- [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/bookdraft2017nov5.pdf)
+- [Algorithms for Reinforcement Learning](https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf)
