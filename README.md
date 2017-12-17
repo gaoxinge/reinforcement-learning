@@ -6,7 +6,7 @@ This repository provides code for the tutorial of reinforcement learning.
 
 - [multi-armed bandit](https://github.com/gaoxinge/reinforcement-learning/tree/master/multi-armed%20bandit)
 - [grid world](https://github.com/gaoxinge/reinforcement-learning/tree/master/grid%20world)
-- [model free](https://github.com/gaoxinge/reinforcement-learning)
+- [model free](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20free)
 - [model based](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20based)
 - [mcts](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts)
 
