@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import random
 
+
 class BernoulliArm(object):
     
     def __init__(self, p):

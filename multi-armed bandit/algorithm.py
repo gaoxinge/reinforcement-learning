@@ -2,17 +2,24 @@
 import math
 import random
 
+
 class ABTest(object):
 
     def __init__(self, arm_n):
         self.arm_n = arm_n
-        self.name = 'ab test'
 
     def pull(self):
         return random.choice(range(self.arm_n))
 
     def update(self, arm, reward):
         pass
+        
+    def __str__(self):
+        return 'ab test'
+        
+    def __repr__(self):
+        return 'ABTest(arm_n)'.format(arm_n=self.arm_n)
+
 
 class EpsilonGreedy(object):
     
@@ -21,9 +28,12 @@ class EpsilonGreedy(object):
         self.epsilon = epsilon
         self.values = [0.0 for _ in range(self.arm_n)]
         self.counts = [0.0 for _ in range(self.arm_n)]
-        self.name = 'epsilon greedy: %s' % self.epsilon
         
     def pull(self):
+        for arm in range(self.arm_n):
+            if self.counts[arm] == 0:
+                return arm
+                
         if random.random() < self.epsilon:
             return random.choice(range(self.arm_n))
         else:
@@ -33,6 +43,13 @@ class EpsilonGreedy(object):
     def update(self, arm, reward):
         self.counts[arm] += 1
         self.values[arm] += (reward - self.values[arm]) / self.counts[arm]
+        
+    def __str__(self):
+        return 'epsilon greedy: %s' % self.epsilon
+        
+    def __repr__(self):
+        return 'EpsilonGreedy(arm_n, epsilon)'.format(arm_n=self.arm_n, epsilon=self.epsilon)
+
 
 class Softmax(object):
     
@@ -41,40 +58,52 @@ class Softmax(object):
         self.temperature = temperature
         self.values = [0.0 for _ in range(self.arm_n)]
         self.counts = [0.0 for _ in range(self.arm_n)]
-        self.name = 'softmax: %s' % self.temperature
         
     def pull(self):
+        for arm in range(self.arm_n):
+            if self.counts[arm] == 0:
+                return arm
+                
         s = sum([math.exp(v / self.temperature) for v in self.values])
         probs = [math.exp(v / self.temperature) / s for v in self.values]
-        t, prob = random.random(), 0.0
-        for arm in range(self.arm_n):
-            prob += probs[arm]
-            if prob > t:
-                return arm
-        return self.arm_n - 1
+        m = max(probs)
+        return probs.index(m)
         
     def update(self, arm, reward):
         self.counts[arm] += 1
         self.values[arm] += (reward - self.values[arm]) / self.counts[arm]
         
+    def __str__(self):
+        return 'softmax: %s' % self.temperature
+        
+    def __repr__(self):
+        return 'Softmax(arm_n, temperature)'.format(arm_n=self.arm_n, temperature=self.temperature)
+
+
 class UCB1(object):
     
     def __init__(self, arm_n):
         self.arm_n = arm_n
         self.values = [0.0 for _ in range(self.arm_n)]
         self.counts = [0.0 for _ in range(self.arm_n)]
-        self.name = 'UCB1'
         
     def pull(self):
         for arm in range(self.arm_n):
             if self.counts[arm] == 0:
                 return arm
-        total_counts = sum(self.counts)
-        ucb_values = [self.values[arm] + math.sqrt((2 * math.log(total_counts)) / self.counts[arm])
-                      for arm in range(self.arm_n)]
-        m = max(ucb_values)
-        return ucb_values.index(m)
+                
+        t = sum(self.counts)
+        ucbs = [self.values[arm] + math.sqrt((2 * math.log(t)) / self.counts[arm])
+                for arm in range(self.arm_n)]
+        m = max(ucbs)
+        return ucbs.index(m)
         
     def update(self, arm, reward):
         self.counts[arm] += 1
         self.values[arm] += (reward - self.values[arm]) / self.counts[arm]
+        
+    def __str__(self):
+        return 'ucb1'
+        
+    def __repr__(self):
+        return 'UCB1(arm_n)'.format(arm_n=self.arm_n)
