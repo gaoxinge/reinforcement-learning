@@ -1,6 +1,6 @@
 # reinforcement learning
 
-This repository provides code for the tutorial of reinforcement learning.
+This repository provides codes for the tutorial of reinforcement learning.
 
 ## content
 
@@ -23,5 +23,6 @@ This repository provides code for the tutorial of reinforcement learning.
 ## resource
 
 - [无痛的机器学习](https://zhuanlan.zhihu.com/hsmyy): a blog introduces machine learning, and refers to reinforcement learninig
+- [Deep Reinforcement Learning: Model-Free Algorithms(I)|基本model free算法](https://zhuanlan.zhihu.com/p/27388383)：an article summarizes the deep reinforcement learning
 - [dennybritz/reinforcement-learning](https://github.com/dennybritz/reinforcement-learning): a github repository, which gives a tutorial to reinforcement learninig
 - [MorvanZhou/Reinforcement-learning-with-tensorflow](https://github.com/MorvanZhou/Reinforcement-learning-with-tensorflow): a github repository, which gives a tutorial to reinforcement learninig
