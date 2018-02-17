@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 def _initialize(size):
     return {
         (x, y): 0 for x in range(size) for y in range(size)
     }
+
 
 class GridWorld(object):
     """Grid world is a MDP with
