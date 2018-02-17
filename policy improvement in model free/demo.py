@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 from environment import Maze
-from agent import SarsaLambdaAgentWithEpsilonGreedy, SarsaLambdaAgentWithUCB1
+from agent import SarsaLambdaAgentWithEpsilonGreedy, SarsaLambdaAgentWithSoftmax, SarsaLambdaAgentWithUCB1
 
-                
+########
+# demo #
+########
 def sarsa_demo(env, agent, episodes):
     r, rs = 0, []
     for episode in range(episodes):
@@ -24,16 +26,27 @@ def sarsa_demo(env, agent, episodes):
                 env.render()
                 break
     return rs
-    
 
+
+########
+# test #
+########
 def test_sarsa_lambda_with_epsilon_greedy():
     env = Maze()
     agent = SarsaLambdaAgentWithEpsilonGreedy(act_n=4)
     rs = sarsa_demo(env, agent, 2000)
     plt.plot(range(2000), rs), plt.grid(), plt.show()
     
+def test_sarsa_lambda_with_softmax():
+    env = Maze()
+    agent = SarsaLambdaAgentWithSoftmax(act_n=4)
+    rs = sarsa_demo(env, agent, 2000)
+    plt.plot(range(2000), rs), plt.grid(), plt.show()
+
 def test_sarsa_lambda_with_ucb1():
     env = Maze()
     agent = SarsaLambdaAgentWithUCB1(act_n=4)
     rs = sarsa_demo(env, agent, 2000)
     plt.plot(range(2000), rs), plt.grid(), plt.show()
+    
+test_sarsa_lambda_with_softmax()
