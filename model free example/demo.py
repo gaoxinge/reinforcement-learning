@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 from environment import Maze
 from agent import MonteCarloAgent, SarsaAgent, SarsaLambdaAgent, QLearnAgent
 
+########
+# demo #
+########
 def monte_carlo_demo(env, agent, episodes):
     r, rs = 0, []
     for episode in range(episodes):
@@ -23,7 +26,7 @@ def monte_carlo_demo(env, agent, episodes):
                 agent.learn()
                 break
     return rs
-                
+
 def sarsa_demo(env, agent, episodes):
     r, rs = 0, []
     for episode in range(episodes):
@@ -44,7 +47,7 @@ def sarsa_demo(env, agent, episodes):
                 env.render()
                 break
     return rs
-    
+
 def q_learn_demo(env, agent, episodes):
     r, rs = 0, []
     for episode in range(episodes):
@@ -65,6 +68,10 @@ def q_learn_demo(env, agent, episodes):
                 break
     return rs
 
+
+########
+# test #
+########
 def test_monte_carlo():
     env = Maze()
     agent = MonteCarloAgent(act_n=4)

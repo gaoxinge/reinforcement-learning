@@ -1,6 +1,16 @@
 # -*- coding: utf-8 -*-
 import random
 
+__all__ = [
+    "MonteCarloAgent",
+    "SarsaAgent",
+    "SarsaLambdaAgent",
+    "QLearnAgent"
+]
+
+####################
+# utility function #
+####################
 def _all_equal(actions):
     for action in actions:
         for action_ in actions:
@@ -8,6 +18,10 @@ def _all_equal(actions):
                 return False
     return True
 
+
+#########
+# agent #
+#########
 class MonteCarloAgent(object):
 
     def __init__(self, act_n, gamma=0.9, epsilon=0.1):
@@ -45,6 +59,7 @@ class MonteCarloAgent(object):
             self.value_q[state][action] += (total_reward - self.value_q[state][action]) / self.value_n[state][action]
         self.episode = []
 
+
 class SarsaAgent(object):
 
     def __init__(self, act_n, gamma=0.9, epsilon=0.1):
@@ -76,6 +91,7 @@ class SarsaAgent(object):
         target = reward if done else reward + self.gamma * self.value_q[state_][action_]
         error = target - predict
         self.value_q[state][action] += error / self.value_n[state][action]
+
 
 class SarsaLambdaAgent(object):
 
@@ -115,7 +131,8 @@ class SarsaLambdaAgent(object):
             for a in self.eligibility_trace[s]:
                 self.value_q[s][a] += self.eligibility_trace[s][a] * error / (self.value_n[s][a] + 1e-6)
                 self.eligibility_trace[s][a] *= self.gamma * self.lambda_
-                
+
+
 class QLearnAgent(object):
 
     def __init__(self, act_n, gamma=0.9, epsilon=0.1, learning_rate=0.01):
