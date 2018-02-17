@@ -39,7 +39,6 @@ def show_value_p():
         view += '\n\n'
     print view
 
-
 def show_policy():
     view = u''
     for y in range(size):
