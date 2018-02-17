@@ -2,8 +2,17 @@
 from environment import GridWorld
 from agent import DP
 
-size = 4
-gamma = 1
+################
+# basic config #
+################
+size, gamma = 4, 1
+
+correspond = {
+    0:  u'左',
+    1:  u'右',
+    2:  u'上',
+    3:  u'下'
+}
 
 gw = GridWorld(size, gamma)
 
@@ -15,15 +24,12 @@ args = [
     gw.gamma
 ]
 
-correspond = {
-    0:  u'左',
-    1:  u'右',
-    2:  u'上',
-    3:  u'下'
-}
-
 dp = DP(*args)
 
+
+########
+# show #
+########
 def show_value_p():
     view = ''
     for y in range(size):
@@ -32,6 +38,7 @@ def show_value_p():
             view += str(int(round(value_p, 0))) + ' '
         view += '\n\n'
     print view
+
 
 def show_policy():
     view = u''
@@ -47,6 +54,10 @@ def show_policy():
         view += u'\n\n'
     print view
 
+
+########
+# demo #
+########
 def grid_world_policy_evaluation_demo():
     dp.reset()
     dp.policy_evaluation()
@@ -66,8 +77,3 @@ def grid_world_generalized_policy_iteration_demo():
     dp.reset()
     dp.generalized_policy_iteration(10, 10, 0.02, 0.01)
     show_policy()
-    
-grid_world_policy_evaluation_demo()
-grid_world_policy_iteration_demo()
-grid_world_value_iteration_demo()
-grid_world_generalized_policy_iteration_demo()
