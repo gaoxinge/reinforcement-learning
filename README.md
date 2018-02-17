@@ -8,7 +8,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - markov decision process ([article](https://zhuanlan.zhihu.com/p/31613480), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/markov%20decision%20process))
 - bellman equation ([article](https://zhuanlan.zhihu.com/p/31650439))
 - dynamical programming ([article](https://zhuanlan.zhihu.com/p/31804601), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/dynamical%20programming))
-- model free example ([article](), [code]())
+- model free example ([article](https://zhuanlan.zhihu.com/p/31860770), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20free%20example))
 - model free evaluation ([article](https://zhuanlan.zhihu.com/p/32102204))
 - model free control ([article](https://zhuanlan.zhihu.com/p/32201807))
 - policy improvement in model free ([article](), [code]())
