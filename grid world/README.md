@@ -1,2 +1,0 @@
-- [Planning by Dynamic Programming](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/DP.pdf)
-- [无痛的机器学习](https://zhuanlan.zhihu.com/hsmyy)
