@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 
-
+####################
+# utility function #
+####################
 def _initialize(size):
     return {
         (x, y): 0 for x in range(size) for y in range(size)
     }
 
 
+##############
+# Grid World #
+##############
 class GridWorld(object):
     """Grid world is a MDP with
     
@@ -35,7 +40,7 @@ class GridWorld(object):
     def __init__(self, size, gamma):
         self.size = size
         self.gamma = gamma
-        self.terminal_states = [(0, 0), (self.size, self.size)]
+        self.terminal_states = [(0, 0), (self.size-1, self.size-1)]
     
     @property
     def states(self):
