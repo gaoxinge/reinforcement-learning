@@ -11,7 +11,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - model free example ([article](), [code]())
 - model free evaluation ([article]())
 - model free control ([article]())
-- policy improvement ([article](), [code]())
+- policy improvement in model free ([article](), [code]())
 - [model based](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20based)
 - [mcts](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts)
 - [value function approximation](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation)
