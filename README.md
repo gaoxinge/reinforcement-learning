@@ -11,7 +11,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - model free example ([article](https://zhuanlan.zhihu.com/p/31860770), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20free%20example))
 - model free evaluation ([article](https://zhuanlan.zhihu.com/p/32102204))
 - model free control ([article](https://zhuanlan.zhihu.com/p/32201807))
-- policy improvement in model free ([article](), [code]())
+- policy improvement in model free ([article](https://zhuanlan.zhihu.com/p/32517235), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/policy%20improvement%20in%20model%20free))
 - [model based](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20based)
 - [mcts](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts)
 - [value function approximation](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation)
