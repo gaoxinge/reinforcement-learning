@@ -5,7 +5,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 ## content
 
 - multi-armed bandit ([article](https://zhuanlan.zhihu.com/p/31577741), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/multi-armed%20bandit))
-- markov decision process ([article](https://zhuanlan.zhihu.com/p/31613480), [code]())
+- markov decision process ([article](https://zhuanlan.zhihu.com/p/31613480), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/markov%20decision%20process))
 - [grid world](https://github.com/gaoxinge/reinforcement-learning/tree/master/grid%20world)
 - [model free](https://github.com/gaoxinge/reinforcement-learning/tree/master/model%20free)
 - [policy improvement](https://github.com/gaoxinge/reinforcement-learning/tree/master/policy%20improvement)
