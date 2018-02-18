@@ -48,5 +48,3 @@ def test_sarsa_lambda_with_ucb1():
     agent = SarsaLambdaAgentWithUCB1(act_n=4)
     rs = sarsa_demo(env, agent, 2000)
     plt.plot(range(2000), rs), plt.grid(), plt.show()
-    
-test_sarsa_lambda_with_softmax()
