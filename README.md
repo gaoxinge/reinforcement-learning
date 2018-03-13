@@ -12,7 +12,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - model free evaluation ([article](https://zhuanlan.zhihu.com/p/32102204))
 - model free control ([article](https://zhuanlan.zhihu.com/p/32201807))
 - policy improvement in model free ([article](https://zhuanlan.zhihu.com/p/32517235), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/policy%20improvement%20in%20model%20free))
-- learn gym ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/learn%20gym))
+- learn gym ([article](https://zhuanlan.zhihu.com/p/34517203), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/learn%20gym))
 - model based
 - mcts
 - alpha go
