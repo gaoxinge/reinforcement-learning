@@ -15,7 +15,6 @@ This repository provides codes for the tutorial of reinforcement learning.
 - learn gym ([article](https://zhuanlan.zhihu.com/p/34517203), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/learn%20gym))
 - model based
 - mcts
-- alpha go
 - value function approximation ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
 
 ## reference
