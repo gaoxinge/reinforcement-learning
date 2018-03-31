@@ -17,6 +17,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - mcts ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts))
 - global mcts ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/global%20mcts))
 - value function approximation ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
+- policy gradient
 
 ## reference
 
