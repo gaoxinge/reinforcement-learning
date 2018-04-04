@@ -16,6 +16,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - model based
 - mcts ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts))
 - value function approximation ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
+- dqn
 - policy gradient
 
 ## reference
