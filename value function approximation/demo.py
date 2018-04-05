@@ -8,8 +8,7 @@ from linear_model import LinearModel
 
 feat_n = 2048
 tile_n = 8
-iht = IHT(feat_n)
-
+iht    = IHT(feat_n)
 
 max_position = 0.6
 min_position = -1.2
@@ -24,14 +23,12 @@ def gym_demo(env, agent, episodes):
         state = env.reset()
         action = agent.choose(state)
         while True:
-            env.render()
             state_, reward, done, prob = env.step(action)
             action_ = agent.choose(state_)
             agent.learn(state, action, reward, state_, action_, done)
             state, action = state_, action_
             total_reward += reward
             if done:
-                env.render()
                 print('episode: {episode}, total reward: {total_reward}'.format(
                     episode=episode,
                     total_reward=total_reward
@@ -43,12 +40,11 @@ def gym_demo(env, agent, episodes):
 
 
 def get_feature(state, action):
-    hash_table = iht
+    hash_table  = iht
     num_tilings = tile_n
     position_scale = num_tilings / (max_position - min_position)
     velocity_scale = num_tilings / (max_velocity - min_velocity)
     position, velocity = state
-    # print(position, velocity, action, num_tilings, position_scale, velocity_scale)
 
     indexs = tiles(
         hash_table,
