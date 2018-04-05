@@ -1,1 +1,6 @@
+# python tmp file
+__pycache__
 *.pyc
+
+# pycharm
+.idea
