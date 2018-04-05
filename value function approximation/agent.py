@@ -33,4 +33,4 @@ class SarsaAgent(object):
         predict = self.linear_func(state, action)
         target = reward if done else reward + self.gamma * self.linear_func(state_, action_)
         error = target - predict
-        self.linear_func.update(self.learning_rate * error)
+        self.linear_func.update(self.learning_rate * error, state, action)

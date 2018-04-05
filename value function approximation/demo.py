@@ -8,6 +8,9 @@ from linear_model import LinearModel
 
 feat_n = 2048
 tile_n = 8
+iht = IHT(feat_n)
+
+
 max_position = 0.6
 min_position = -1.2
 max_velocity = 0.07
@@ -21,12 +24,14 @@ def gym_demo(env, agent, episodes):
         state = env.reset()
         action = agent.choose(state)
         while True:
+            env.render()
             state_, reward, done, prob = env.step(action)
             action_ = agent.choose(state_)
             agent.learn(state, action, reward, state_, action_, done)
             state, action = state_, action_
             total_reward += reward
             if done:
+                env.render()
                 print('episode: {episode}, total reward: {total_reward}'.format(
                     episode=episode,
                     total_reward=total_reward
@@ -38,7 +43,7 @@ def gym_demo(env, agent, episodes):
 
 
 def get_feature(state, action):
-    hash_table = IHT(feat_n)
+    hash_table = iht
     num_tilings = tile_n
     position_scale = num_tilings / (max_position - min_position)
     velocity_scale = num_tilings / (max_velocity - min_velocity)
@@ -61,8 +66,8 @@ def test_gym():
     env = gym.make('MountainCar-v0')
     linear_func = LinearModel(feat_n, get_feature)
     agent = SarsaAgent(act_n=3, linear_func=linear_func)
-    rs = gym_demo(env, agent, 100000)
-    plt.plot(range(100000), rs), plt.grid(), plt.show()
+    rs = gym_demo(env, agent, 500)
+    plt.plot(range(500), rs), plt.grid(), plt.show()
 
 
 test_gym()
