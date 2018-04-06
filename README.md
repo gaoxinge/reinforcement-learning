@@ -15,7 +15,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - learn gym ([article](https://zhuanlan.zhihu.com/p/34517203), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/learn%20gym))
 - model based learning ([article](https://zhuanlan.zhihu.com/p/35348443))
 - mcts ([article](https://zhuanlan.zhihu.com/p/35359337), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts))
-- value function approximation ([code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
+- value function approximation ([article](https://zhuanlan.zhihu.com/p/35335243), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
 - dqn
 - policy gradient
 
