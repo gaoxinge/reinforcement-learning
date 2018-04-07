@@ -16,7 +16,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - model based learning ([article](https://zhuanlan.zhihu.com/p/35348443))
 - mcts ([article](https://zhuanlan.zhihu.com/p/35359337), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts))
 - value function approximation ([article](https://zhuanlan.zhihu.com/p/35335243), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
-- learning tensorflow
+- learn tensorflow
 - dqn
 - policy gradient
 
