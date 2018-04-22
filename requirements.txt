@@ -1,4 +1,6 @@
 numpy
 scipy
 matplotlib
+sklearn
+tensorflow
 gym
