@@ -44,7 +44,7 @@ class LogisticRegression:
     def _build(self):
         self.x = tf.placeholder(tf.float32, [None, self.feature_num])
         self.y = tf.placeholder(tf.float32, [None, 1])
-        self.w = tf.Variable(tf.zeros([2, 1]))
+        self.w = tf.Variable(tf.zeros([self.feature_num, 1]))
         self.b = tf.Variable(tf.zeros([1]))
         self.logits = tf.matmul(self.x, self.w) + self.b
 
