@@ -31,8 +31,8 @@ def gym_demo(env, agent, episodes):
     
 
 def test_gym():
-    env = gym.make('MountainCar-v0').env
-    agent = QLearnAgent(state_n=2, act_n=3)
+    env = gym.make('CartPole-v1')
+    agent = QLearnAgent(state_n=4, act_n=2)
     rs = gym_demo(env, agent, 1000)
     plt.plot(range(1000), rs), plt.grid(), plt.show()
 
