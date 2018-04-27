@@ -10,7 +10,7 @@ def gym_demo(env, agent, episodes):
         total_reward = 0
         raw_state = env.reset()
         state = [raw_state]
-        for _ in range(5000):
+        for _ in range(500):
             env.render()
             action = agent.choose(state)
             raw_state_, reward, done, prob = env.step(action)
@@ -37,12 +37,13 @@ def gym_demo(env, agent, episodes):
             ))
             r += total_reward
             rs.append(r / (episode + 1))
+
     return rs
     
 
 def test_gym():
-    env = gym.make('MountainCar-v0').env
-    agent = DQNAgent(state_n=2, act_n=3)
+    env = gym.make('CartPole-v1')
+    agent = DQNAgent(state_n=4, act_n=2)
     rs = gym_demo(env, agent, 1000)
     plt.plot(range(1000), rs), plt.grid(), plt.show()
 
