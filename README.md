@@ -17,7 +17,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - mcts ([article](https://zhuanlan.zhihu.com/p/35359337), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/mcts))
 - value function approximation ([article](https://zhuanlan.zhihu.com/p/35335243), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
 - logistic regression ([article](https://zhuanlan.zhihu.com/p/36028014), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/logistic%20regression))
-- dqn
+- dqn ([article](https://zhuanlan.zhihu.com/p/36207117), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/dqn))
 - policy gradient
 
 ## reference
