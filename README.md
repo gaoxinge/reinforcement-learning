@@ -18,7 +18,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - value function approximation ([article](https://zhuanlan.zhihu.com/p/35335243), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/value%20function%20approximation))
 - logistic regression ([article](https://zhuanlan.zhihu.com/p/36028014), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/logistic%20regression))
 - dqn ([article](https://zhuanlan.zhihu.com/p/36207117), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/dqn))
-- policy gradient
+- policy gradient ([article](https://zhuanlan.zhihu.com/p/36224190), [code](https://github.com/gaoxinge/reinforcement-learning/tree/master/policy%20gradient))
 
 ## reference
 
