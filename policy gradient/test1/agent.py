@@ -2,7 +2,7 @@
 import random
 from model import Model
 
-    
+
 def _all_equal(probs):
     for prob in probs:
         for prob_ in probs:
@@ -17,11 +17,11 @@ class MonteCarloPolicyGradientAgent:
         self.state_n = state_n
         self.act_n = act_n
         self.gamma = gamma
-        self.learing_rate = learing_rate
+        self.learning_rate = learning_rate
         
         self.episode = []
         
-        self.model = Model(state_n, act_n, learing_rate)
+        self.model = Model(state_n, act_n, learning_rate)
 
     def choose(self, state):
         probs = self.model.predict(state)

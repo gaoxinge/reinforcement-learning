@@ -12,7 +12,7 @@ def gym_demo(env, agent, episodes):
         while True:
             env.render()
             action = agent.choose(state)
-            state_, reward, done = env.step(action)
+            state_, reward, done, prob = env.step(action)
             agent.store(state, action, reward)
             state = state_
             total_reward += reward
@@ -30,10 +30,10 @@ def gym_demo(env, agent, episodes):
 
     
 def test_gym():
-    env = gym.make().env
-    agent = MonteCarloPolicyGradientAgent()
-    rs = gym_demo(env, agent, 10000)
-    plt.plot(range(10000), rs), plt.grid(), plt.show()
+    env = gym.make('MountainCar-v0').env
+    agent = MonteCarloPolicyGradientAgent(2, 3)
+    rs = gym_demo(env, agent, 1000)
+    plt.plot(range(1000), rs), plt.grid(), plt.show()
     
 
 test_gym()

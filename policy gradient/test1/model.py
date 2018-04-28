@@ -11,8 +11,8 @@ class Model:
     def __init__(self, state_n, act_n, learning_rate):
         self.state_n = state_n
         self.act_n = act_n
-        self.learing_rate = learing_rate
-        self.theta = [0.0] * len(state_n + 1)
+        self.learning_rate = learning_rate
+        self.theta = [0.0] * (state_n + 1)
         
     def _make_feature(self, state, action):
         return [s for s in state] + [action]
@@ -36,5 +36,5 @@ class Model:
         t2 = [self._prob(state, a) for a in range(self.act_n)]
         t3 = [self._make_feature(state, a) for a in range(self.act_n)]
         for i in range(len(self.theta)):
-            theta[i] = self.theta[i] + self.learing_rate * (t1[i] - _dot_operation(t2, [t[i] for t in t3])) * total_reward
+            theta[i] = self.theta[i] + self.learning_rate * (t1[i] - _dot_operation(t2, [t[i] for t in t3])) * total_reward
         self.theta = theta
