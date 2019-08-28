@@ -27,6 +27,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - CS 294: Deep Reinforcement Learning, Fall 2017 ([slide](http://rll.berkeley.edu/deeprlcourse/), [blog](https://zhuanlan.zhihu.com/c_150977189))
 - Reinforcement Learning: An Introduction ([book](http://incompleteideas.net/book/bookdraft2017nov5.pdf), [code](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction))
 - Algorithms for Reinforcement Learning ([paper](https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf))
+- [Welcome to Spinning Up in Deep RL!](https://spinningup.openai.com/en/latest/)
 
 ## resource
 
