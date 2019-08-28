@@ -10,8 +10,8 @@ def gym_demo(env, agent, episodes):
         total_reward = 0
         raw_state = env.reset()
         state = [raw_state]
-        while True:
-            env.render()
+        for _ in range(500):
+            # env.render()
             action = agent.choose(state)
             raw_state_, reward, done, prob = env.step(action)
             state_ = [raw_state_]
@@ -19,7 +19,7 @@ def gym_demo(env, agent, episodes):
             state = state_
             total_reward += reward
             if done:
-                env.render()
+                # env.render()
                 print('episode: {episode}, total reward: {total_reward}'.format(
                     episode=episode,
                     total_reward=total_reward
@@ -27,6 +27,14 @@ def gym_demo(env, agent, episodes):
                 r += total_reward
                 rs.append(r / (episode + 1))
                 break
+        else:
+            # env.render()
+            print('episode: {episode}, total reward: {total_reward}'.format(
+                episode=episode,
+                total_reward=total_reward
+            ))
+            r += total_reward
+            rs.append(r / (episode + 1))
     return rs
     
 
@@ -34,7 +42,8 @@ def test_gym():
     env = gym.make('MountainCar-v0').env
     agent = QLearnAgent(state_n=2, act_n=3)
     rs = gym_demo(env, agent, 1000)
-    plt.plot(range(1000), rs), plt.grid(), plt.show()
+    # plt.plot(range(1000), rs), plt.grid(), plt.show()
+    plt.plot(range(1000), rs), plt.grid(), plt.savefig('../image/3.jpg')
 
 
 test_gym()

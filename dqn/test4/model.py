@@ -3,8 +3,8 @@ import tensorflow as tf
 
 
 def _add_layer(x, input_size, output_size, activation_function=None):
-    w = tf.Variable(tf.zeros([input_size, output_size]))
-    b = tf.Variable(tf.zeros([1, output_size]))
+    w = tf.Variable(tf.random_normal([input_size, output_size])) # don't initialize zero
+    b = tf.Variable(tf.zeros([1, output_size]) + 0.1)            # don't initialize zero
     y = tf.matmul(x, w) + b
     if activation_function is None:
         return y
