@@ -11,6 +11,13 @@ def _all_equal(probs):
     return True
 
 
+def _exist_nan(probs):
+    for prob in probs:
+        if np.isnan(prob):
+            return True
+    return False        
+
+
 class MonteCarloPolicyGradientAgent:
 
     def __init__(self, state_n, act_n, gamma=0.9, learning_rate=0.001):
@@ -25,9 +32,9 @@ class MonteCarloPolicyGradientAgent:
 
     def choose(self, state):
         probs = self.model.predict(state)
-        if _all_equal(probs):
+        if _all_equal(probs) or _exist_nan(probs):
             return np.random.choice(range(self.act_n))
-        return np.random.choice(range(len(probs)), p=probs)
+        return np.random.choice(range(self.act_n), p=probs)
 
     def store(self, state, action, reward):
         self.episode.append((state, action, reward))

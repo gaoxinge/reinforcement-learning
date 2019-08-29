@@ -41,8 +41,8 @@ def gym_demo(env, agent, episodes):
 def test_gym():
     env = gym.make('CartPole-v1').env
     agent = MonteCarloPolicyGradientAgent(4, 2)
-    rs = gym_demo(env, agent, 1000)
-    plt.plot(range(1000), rs), plt.grid(), plt.show()
-    
+    rs = gym_demo(env, agent, 10000)
+    # plt.plot(range(10000), rs), plt.grid(), plt.show()
+    plt.plot(range(10000), rs), plt.grid(), plt.savefig('../image/2.jpg')
 
 test_gym()

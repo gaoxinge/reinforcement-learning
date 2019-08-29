@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import random
+import numpy as np
 from model import Model
 
 
@@ -13,7 +13,7 @@ def _all_equal(probs):
 
 class MonteCarloPolicyGradientAgent:
 
-    def __init__(self, state_n, act_n, gamma=0.9, learning_rate=0.01):
+    def __init__(self, state_n, act_n, gamma=0.9, learning_rate=0.001):
         self.state_n = state_n
         self.act_n = act_n
         self.gamma = gamma
@@ -26,9 +26,8 @@ class MonteCarloPolicyGradientAgent:
     def choose(self, state):
         probs = self.model.predict(state)
         if _all_equal(probs):
-            return random.choice(range(self.act_n))
-        m = max(probs)
-        return probs.index(m)
+            return np.random.choice(range(self.act_n))
+        return np.random.choice(range(len(probs)), p=probs)
 
     def store(self, state, action, reward):
         self.episode.append((state, action, reward))
