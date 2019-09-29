@@ -25,6 +25,7 @@ This repository provides codes for the tutorial of reinforcement learning.
 - UCL Course on RL ([slide](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html), [video](https://www.bilibili.com/video/av8912293/))
 - CS 294: Deep Reinforcement Learning, Spring 2017 ([slide](http://rll.berkeley.edu/deeprlcoursesp17/), [video](https://www.bilibili.com/video/av9802698/), [code](https://github.com/berkeleydeeprlcourse/homework), [blog](https://zhuanlan.zhihu.com/c_125238795))
 - CS 294: Deep Reinforcement Learning, Fall 2017 ([slide](http://rll.berkeley.edu/deeprlcourse/), [blog](https://zhuanlan.zhihu.com/c_150977189))
+- Reinforcement Learning and Optimal Control ([slide](http://web.mit.edu/dimitrib/www/RLbook.html))
 - Reinforcement Learning: An Introduction ([book](http://incompleteideas.net/book/bookdraft2017nov5.pdf), [code](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction))
 - Algorithms for Reinforcement Learning ([paper](https://sites.ualberta.ca/~szepesva/papers/RLAlgsInMDPs.pdf))
 - Welcome to Spinning Up in Deep RL! ([site](https://spinningup.openai.com/en/latest/))
