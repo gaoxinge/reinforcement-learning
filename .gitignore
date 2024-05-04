@@ -1,6 +1,4 @@
-# python tmp file
+.idea
+venv
 __pycache__
 *.pyc
-
-# pycharm
-.idea

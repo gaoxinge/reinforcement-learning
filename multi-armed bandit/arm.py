@@ -1,14 +1,10 @@
-# -*- coding: utf-8 -*-
 import random
 
 
-class BernoulliArm(object):
+class BernoulliArm:
     
     def __init__(self, p):
         self.p = p
         
     def step(self):
-        if random.random() < self.p:
-            return 1.0
-        else:
-            return 0.0
+        return 1.0 if random.random() < self.p else 0.0

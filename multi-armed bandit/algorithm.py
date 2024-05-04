@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 import math
 import random
 
 
-class ABTest(object):
+class ABTest:
 
     def __init__(self, arm_n):
         self.arm_n = arm_n
@@ -21,7 +20,7 @@ class ABTest(object):
         return 'ABTest(arm_n)'.format(arm_n=self.arm_n)
 
 
-class EpsilonGreedy(object):
+class EpsilonGreedy:
     
     def __init__(self, arm_n, epsilon):
         self.arm_n = arm_n
@@ -51,7 +50,7 @@ class EpsilonGreedy(object):
         return 'EpsilonGreedy(arm_n, epsilon)'.format(arm_n=self.arm_n, epsilon=self.epsilon)
 
 
-class Softmax(object):
+class Softmax:
     
     def __init__(self, arm_n, temperature):
         self.arm_n = arm_n
@@ -63,11 +62,12 @@ class Softmax(object):
         for arm in range(self.arm_n):
             if self.counts[arm] == 0:
                 return arm
-                
-        s = sum([math.exp(v / self.temperature) for v in self.values])
-        probs = [math.exp(v / self.temperature) / s for v in self.values]
-        m = max(probs)
-        return probs.index(m)
+
+        weights = [math.exp(v / self.temperature) for v in self.values]
+        s = sum(weights)
+        weights = [weight / s for weight in weights]
+        r = random.choices(list(range(self.arm_n)), weights)[0]
+        return r
         
     def update(self, arm, reward):
         self.counts[arm] += 1
@@ -80,7 +80,7 @@ class Softmax(object):
         return 'Softmax(arm_n, temperature)'.format(arm_n=self.arm_n, temperature=self.temperature)
 
 
-class UCB1(object):
+class UCB1:
     
     def __init__(self, arm_n):
         self.arm_n = arm_n
@@ -107,3 +107,32 @@ class UCB1(object):
         
     def __repr__(self):
         return 'UCB1(arm_n)'.format(arm_n=self.arm_n)
+
+
+class TS:
+
+    def __init__(self, arm_n):
+        self.arm_n = arm_n
+        self.alphas = [1 for _ in range(self.arm_n)]
+        self.betas = [1 for _ in range(self.arm_n)]
+        self.counts = [0.0 for _ in range(self.arm_n)]
+
+    def pull(self):
+        for arm in range(self.arm_n):
+            if self.counts[arm] == 0:
+                return arm
+
+        thetas = [random.betavariate(alpha, beta) for alpha, beta in zip(self.alphas, self.betas)]
+        m = max(thetas)
+        return thetas.index(m)
+
+    def update(self, arm, reward):
+        self.counts[arm] += 1
+        self.alphas[arm] += reward
+        self.betas[arm] += 1 - reward
+
+    def __str__(self):
+        return 'ts'
+
+    def __repr(self):
+        return 'TS(arm_n)'.format(arm_n=self.arm_n)

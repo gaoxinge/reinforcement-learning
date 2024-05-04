@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 from arm import BernoulliArm
-from algorithm import ABTest, EpsilonGreedy, Softmax, UCB1
+from algorithm import ABTest, EpsilonGreedy, Softmax, UCB1, TS
 
 
 arms = [BernoulliArm(0.1), BernoulliArm(0.1), BernoulliArm(0.1), 
         BernoulliArm(0.1), BernoulliArm(0.9)]
+
 
 def algorithm_demo(arms, algorithm, episodes):
     r, s = 0.0, []
@@ -18,9 +18,6 @@ def algorithm_demo(arms, algorithm, episodes):
     return s
 
 
-########
-# demo #
-########
 def ab_test_demo():
     ab_test = ABTest(5)
     s = algorithm_demo(arms, ab_test, 1000)
@@ -36,7 +33,7 @@ def epsilon_greedy_demo():
 
 
 def all_demo():
-    algorithms = [ABTest(5), EpsilonGreedy(5, 0.1), Softmax(5, 0.1), UCB1(5)]
+    algorithms = [ABTest(5), EpsilonGreedy(5, 0.1), Softmax(5, 0.1), UCB1(5), TS(5)]
     ss = [algorithm_demo(arms, algorithm, 1000) for algorithm in algorithms]
-    [plt.plot(range(1000), ss[i], label=str(algorithms[i])) for i in range(4)]
+    [plt.plot(range(1000), ss[i], label=str(algorithms[i])) for i in range(5)]
     plt.legend(), plt.grid(), plt.show()
